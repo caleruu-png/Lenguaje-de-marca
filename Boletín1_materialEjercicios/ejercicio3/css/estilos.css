@@ -1,0 +1,138 @@
+/* 1. Todos los elementos */
+* {
+    font-family: "Open Sans", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* 2. Primer h1 que depende de body */
+#titulo-principal  {
+    font-family: "Verdana", Arial, sans-serif;
+    font-size: 2.5em;
+    text-align: center;
+    margin: 2em 0 1em;
+    color: #2c3e50;
+}
+
+/* 3. Todos los h1 */
+h1 {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+/* 4. Todos los párrafos */
+p{
+    font-size: 1.15em;
+    margin-bottom: 1.2em;
+    color: #555;
+}
+
+/* 5. Párrafos de clase "texto" */
+.texto p{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* 6. Todos los párrafos que estén dentro de div con id "noticia-principal" */
+#noticia-principal p {
+    color: #1b5e20;
+    padding: 0.8em 1em;
+    background: #e8f5e9;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+/* 7. Span dentro de párrafos */
+span {
+    background: #c8e6c9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* 8. Span con atributo id */
+span[id] {
+    background: #212121;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* 9. Span hijos directos de h1 */
+h1 > span {
+    text-decoration: line-through;
+    color: #c0392b;
+}
+
+/* 10. Todos los elementos con id "noticia-principal" o con id "noticia-secundaria" */
+#noticia-principal, #noticia-secundaria {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 2em;
+    margin: 2em 0;
+}
+
+/* 11. Enlaces dentro de párrafos de clase texto */
+.texto a {
+    color: #e67e22;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* 12. Subrayar los enlaces al situarnos encima */
+a:hover {
+    text-decoration: underline;
+}
+
+/* 13. h2 al mismo nivel que body */
+body > h2 {
+    background: #9b59b6;
+    color: #fff;
+    padding: 0.6em 1em;
+    border-radius: 8px;
+    margin-top: 1.8em;
+    font-size: 1.6em;
+}
+
+/* 14. h2 justo después de body > h1 (títulos principales) */
+body > h1 + h2 {
+    font-size: 1.8em;
+    color: #1abc9c;
+    background: #9b59b6; /* opcional mantener fondo original */
+}
+
+/* 15. h2 subsecciones (todos los h2 hermanos de h1 excepto el primero) */
+h1 ~ h2 {
+    background: #d8b7f1; /* morado clarito */
+    color: #4b0082; /* texto un poco más oscuro para contraste */
+}
+
+/* 16. h2 cuyo title contenga "motivo" */
+h2[title*="motivo"] {
+    text-decoration: underline;
+}
+
+/* 17. Todos los textos de la página HTML que informen sobre el número de años determinado */
+p{
+    background: #81c784;
+    border: 1px solid #2e7d32;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+/* 18. Estilo para h3 */
+h3 {
+    color: #2980b9;
+    font-size: 1.4em;
+    margin: 1em 0 0.5em;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 0.2em;
+}

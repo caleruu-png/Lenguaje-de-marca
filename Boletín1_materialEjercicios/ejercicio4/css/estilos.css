@@ -1,0 +1,54 @@
+/* 1. Añade los bordes a la tabla*/
+table, th, td {
+    border: 2px solid #34495e;
+    border-collapse: collapse;
+}
+
+/* 2. Utilizando únicamente pseudoselectores da color de fondo verde a las casillas que contienen horas. Pista: usa first-child */
+table td:first-child {
+    background-color: #3aff41;
+}
+
+/* 3. Utilizando únicamente pseudoselectores da color de fondo amarillo a la celda de recreo. Pista :nth-child */
+tbody>:nth-child(3) {
+    background-color: #ffeb3b;
+}
+
+/* 4. Cambiar los estado de los enlaces para que:
+ Nunca estén subrayados
+ Si están visitados se muestren en rojo
+ Si no están visitado se muestren en verde */
+a:link{
+      text-decoration: none;
+      color: green;
+}
+a:visited{
+      text-decoration: none;
+      color: red;
+}
+
+/* 5. Utilizando pseudoselectores hacer que cuando pasemos el ratón sobre la columna del viernes
+aumente el tamaño de letra al doble. Pista: usa last-child*/
+td:last-child:hover {
+    font-size: 200%;
+}
+
+/* 6. Utilizando Pseudoelementos Haz que la primera letra de los días tenga el doble de tamaño*/
+tr th::first-letter {
+    font-size: 200%;
+}
+
+/* 7. En los campos de formulario obligatorios, añade un borde rojo de 2px.
+      De forma adicional, haz que el contenido que se escriba en el campo se separe 10px del borde */
+      form input[required] {
+    border: 2px solid red;
+    padding: 10px;
+}
+
+/* 8. Añade un * en rojo detrás de las etiquetas de tipo label. Pista: usa content */
+label::after {
+    content: " *";
+    color: red;
+}
+
+

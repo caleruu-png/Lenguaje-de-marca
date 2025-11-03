@@ -1,0 +1,126 @@
+/*1. Dale a toda la página un fondo de color #f3f6fa, color de letra #333, y fuentes Arial, sans-serif */
+
+body {
+    background: #f3f6fa;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+/* 2. Centra en la página el texto del título de la tabla, 
+   color de letra #003366, 
+   margen con respecto al borde de la página y 
+   con repecto al siguiente elemento de 20px */
+
+   caption{
+    text-align: center;
+    color: #003366;
+    margin: 20px 0;
+}
+
+/* 3. Estilo del borde de la tabla 1px, dashed (punteado), color #ccc,
+   centra la tabla (margin: 0 auto;)
+   asigna a la tabla una anchura del 70% */
+
+table {
+    border: 1px dashed #ccc;
+    margin: 0 auto;
+    width: 70%;
+}
+
+/* 4. Título de la tabla en negrita, 
+   tamaño de letra 2em,
+   sepáralo de la tabla 10px,
+   usa la fuente 'Courier New', Courier, monospace */
+
+   caption {
+       font-weight: bold;
+       font-size: 2em;
+       margin-bottom: 10px;
+       font-family: 'Courier New', Courier, monospace;
+   }
+
+/* 5. Estilo de th y td 1px, dashed (punteado), color #ccc,
+   centra el texto de las celdas,
+   el espacio entre el contenido interior de cada celda y su borde es de 10px */
+
+   th, td{
+    border: 1px dashed, #ccc;
+    text-align: center;
+   }
+
+/* 6. Une los bordes de tabla+td */
+    table{
+     border-collapse: collapse;
+    }
+
+/* 7. Utilizando una única regla de selección, haz que todas las celdas de la primera columna de la tabla
+      tengan fondo color #145169, letra blanca y en negrita */
+
+    .primera {
+        background-color: #145169;
+        color: white;
+        font-weight: bold;
+    }
+
+/* 8. Con un único selector, aplica un color de fondo gris claro #ddd, 
+    un tamaño de letra algo mayor (1.2em), 
+    fuente negrita, 
+    y texto color #2c3e50
+    para las celdas con las capacidades (por ejemplo, 2GB, 4GB...) */
+    .gb {
+        background-color: #ddd;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+
+/* 9. Con un único selector, las listas de la fila "Colores" han
+    de tener texto color rojizo #c0392b, alineada a la izquierda,
+    y el estilo de viñeta cuadrado (square)*/
+
+    .fila2 ul {
+        color: #c0392b;
+        text-align: left;
+        list-style-type: square;
+    }
+/* 10. El resto de listas que aparezcan en la página han de aparecer
+    con viñeta circle, color #145169,
+    añade 20px de espacio hasta el borde izquierdo
+    y alinea el texto a la izquierda */
+
+    ul {
+        list-style-type: circle;
+        color: #145169;
+        padding-left: 20px;
+        text-align: left;
+    }
+
+
+/* 11. Especifica el padding superior e inferior a la celda en la que pone "5 horas" y 
+    asígnale fondo color #fff8b3.
+    Añade 30px de espacio hasta el borde inferior y el superior */
+    #cinco {
+        background-color: #fff8b3;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+/* 12. Asigna color #85c1e9 de fondo a todas las celdas que tengan un valor de colspan de 2 o de 3 */
+    td[colspan="2"], td[colspan="3"] {
+        background-color: #85c1e9;
+    }
+
+/* 13. Da a todas las imágenes el mismo tamaño 50x50px */
+    img {
+        width: 50px;
+        height: 50px;
+    }
+
+/* 14. Cuando me sitúe encima de cualquier celda de la tabla, 
+    cambia el fondo a negro,
+    cambia el texto a blanco */
+
+    td:hover {
+        background-color: black;
+        color: white;
+    }

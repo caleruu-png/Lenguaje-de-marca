@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3 - Tablas Avanzadas</title>
+  <style>
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+    thead {
+      background-color: #4CAF50;
+      color: white;
+    }
+    tfoot {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: center;
+    }
+    /* Variantes de visualización */
+    /* (1) Zebra stripes */
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    /* (2) Hover */
+    tbody tr:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Asignatura</th>
+        <th>Profesor</th>
+        <th>Aula</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Matemáticas</td>
+        <td>Juan Pérez</td>
+        <td>101</td>
+      </tr>
+      <tr>
+        <td>Lengua</td>
+        <td>Ana López</td>
+        <td>102</td>
+      </tr>
+      <tr>
+        <td>Historia</td>
+        <td>Carlos Ruiz</td>
+        <td>103</td>
+      </tr>
+      <tr>
+        <td>Inglés</td>
+        <td>María Díaz</td>
+        <td>104</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">Horario: Curso 2025</td>
+      </tr>
+    </tfoot>
+  </table>
+
+</body>
+</html>
