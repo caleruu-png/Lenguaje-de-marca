@@ -47,7 +47,7 @@ p{
 }
 
 /* 7. Span dentro de párrafos */
-span {
+p>span {
     background: #c8e6c9;
     padding: 2px 6px;
     border-radius: 4px;
