@@ -56,7 +56,6 @@ input[type="submit"] {
 /* R1: Primera letra de h2 más grande */
 h2::first-letter {
   font-size: 2em;
-  font-weight: 700;
 }
 
 /* R2: Sólo el primer párrafo después de cada h2 tiene sangrado en la primera línea */
@@ -64,15 +63,15 @@ h2 + p {
   text-indent: 2em;
 }
 
-/* R3: Mostrar flecha "=>" al principio de cada enlace */
+/* R3: Mostrar flecha "→" al principio de cada enlace */
 a::before {
-  content: "=> ";
+  content: "→ ";
 }
 
 /* R4: Mostrar el atributo title después de una abreviatura */
 abbr::after {
   content: " (" attr(title) ")";
-  font-style: normal;
+  font-style: italic;
   color: #555;
   font-size: 0.95em;
   margin-left: 0.15em;
@@ -85,14 +84,13 @@ abbr::after {
   background-color: lightcoral;
   color: white;
   border-radius: 6px;
-  padding: 2px 6px;
 }
 
 /* R6: Estados de los enlaces */
 a:link { color: red; }
 a:visited { color: green; }
 a:hover { color: blue; }
-a:active { color: pink; }
+a:active { color: rgb(255, 95, 122); }
 
 /* R7: Primer elemento de cualquier lista no numerada */
 ul li:first-child {
@@ -111,11 +109,8 @@ ul li:first-child {
 #datos {
   list-style-type: square;
   border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
   box-shadow: 5px 10px 0 0 lightcoral;
-  padding: 18px;
-  background: #fff; /* aseguro contraste con la sombra */
+  background: linear-gradient(135deg, #f5f7fa, #e3eefc); /* aseguro contraste con la sombra */
 }
 
 #datos li::marker {
@@ -125,9 +120,7 @@ ul li:first-child {
 /* R10: Al situarnos sobre un elemento del formulario cambiar fondo a amarillo; botón enviar tiene comportamiento especial */
 form input:hover,
 form textarea:hover,
-form select:hover,
-form label:hover,
-form fieldset:hover {
+form select:hover {
   background-color: #fbd53c;
 }
 
