@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo E-R: Parques Naturales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .diagram {
+            position: relative;
+            min-height: 1400px;
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .entity {
+            position: absolute;
+            background: #fff;
+            border: 3px solid #2b6cb0;
+            border-radius: 8px;
+            padding: 15px;
+            min-width: 160px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .entity-title {
+            font-weight: bold;
+            color: #2b6cb0;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 5px;
+        }
+        .entity-attributes {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #4a5568;
+        }
+        .pk {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .relationship {
+            position: absolute;
+            background: #f6e05e;
+            border: 2px solid #d69e2e;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #744210;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .weak-entity {
+            border: 3px double #2b6cb0;
+            background: #ebf8ff;
+        }
+        .specialization {
+            position: absolute;
+            background: white;
+            border: 2px solid #9f7aea;
+            border-radius: 8px;
+            padding: 10px;
+            min-width: 140px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .specialization-title {
+            font-weight: bold;
+            color: #6b46c1;
+            text-align: center;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+        .specialization-attributes {
+            font-size: 11px;
+            line-height: 1.5;
+            color: #553c9a;
+        }
+        .legend {
+            margin-top: 20px;
+            padding: 15px;
+            background: #edf2f7;
+            border-radius: 8px;
+        }
+        .legend-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+        .legend-item {
+            margin: 5px 0;
+            font-size: 13px;
+            color: #4a5568;
+        }
+        .cardinality {
+            position: absolute;
+            font-weight: bold;
+            font-size: 13px;
+            color: #c53030;
+            background: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        line {
+            stroke: #4a5568;
+            stroke-width: 2;
+        }
+        .notes {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fef5e7;
+            border-left: 4px solid #f39c12;
+            border-radius: 4px;
+        }
+        .notes-title {
+            font-weight: bold;
+            color: #d68910;
+            margin-bottom: 8px;
+        }
+        .notes-content {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #6c5c3d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Modelo Entidad-Relación: Parques Naturales</h1>
+        <p class="subtitle">Sistema de Información de Parques Naturales por CCAA</p>
+        
+        <div class="diagram">
+            <svg id="connections"></svg>
+            
+            <!-- CCAA -->
+            <div class="entity" style="top: 20px; left: 50px;">
+                <div class="entity-title">CCAA</div>
+                <div class="entity-attributes">
+                    <span class="pk">código</span><br>
+                    nombre
+                </div>
+            </div>
+            
+            <!-- Relación GESTIONA -->
+            <div class="relationship" style="top: 50px; left: 280px;">GESTIONA</div>
+            <div class="cardinality" style="top: 40px; left: 220px;">(1,n)</div>
+            <div class="cardinality" style="top: 40px; left: 460px;">(1,n)</div>
+            
+            <!-- PARQUE NATURAL -->
+            <div class="entity" style="top: 20px; left: 520px;">
+                <div class="entity-title">PARQUE NATURAL</div>
+                <div class="entity-attributes">
+                    <span class="pk">código</span><br>
+                    nombre (único)<br>
+                    fecha_declaración<br>
+                    tiempo_declarado (derivado)
+                </div>
+            </div>
+            
+            <!-- ÁREA (Entidad débil) -->
+            <div class="entity weak-entity" style="top: 210px; left: 520px;">
+                <div class="entity-title">ÁREA</div>
+                <div class="entity-attributes">
+                    <span class="pk">código</span><br>
+                    nombre<br>
+                    extensión
+                </div>
+            </div>
+            
+            <!-- Relación COMPONE -->
+            <div class="relationship" style="top: 160px; left: 580px;">COMPONE</div>
+            <div class="cardinality" style="top: 140px; left: 600px;">(1,1)</div>
+            <div class="cardinality" style="top: 190px; left: 600px;">(1,n)</div>
+            
+            <!-- ESPECIE -->
+            <div class="entity" style="top: 410px; left: 520px;">
+                <div class="entity-title">ESPECIE</div>
+                <div class="entity-attributes">
+                    <span class="pk">denominación_científica</span> (única)<br>
+                    denominación_común (única)
+                </div>
+            </div>
+            
+            <!-- Relación RESIDE -->
+            <div class="relationship" style="top: 330px; left: 580px;">RESIDE</div>
+            <div class="cardinality" style="top: 300px; left: 600px;">(0,n)</div>
+            <div class="cardinality" style="top: 380px; left: 600px;">(1,n)</div>
+            <div class="entity" style="top: 330px; left: 750px; min-width: 100px; background: #e6fffa; border-color: #319795;">
+                <div class="entity-attributes" style="text-align: center; color: #234e52; font-weight: bold;">
+                    nº_individuos
+                </div>
+            </div>
+            
+            <!-- Especialización ESPECIE -->
+            <div class="specialization" style="top: 560px; left: 300px;">
+                <div class="specialization-title">VEGETAL</div>
+                <div class="specialization-attributes">
+                    tiene_floración<br>
+                    periodo_floración
+                </div>
+            </div>
+            
+            <div class="specialization" style="top: 560px; left: 520px;">
+                <div class="specialization-title">ANIMAL</div>
+                <div class="specialization-attributes">
+                    tipo_alimentación<br>
+                    (herbívora, carnívora,<br>
+                    omnívora)
+                </div>
+            </div>
+            
+            <div class="specialization" style="top: 560px; left: 760px;">
+                <div class="specialization-title">MINERAL</div>
+                <div class="specialization-attributes">
+                    tipo<br>
+                    (cristal, roca)
+                </div>
+            </div>
+            
+            <!-- Indicador de especialización -->
+            <div style="position: absolute; top: 530px; left: 580px; font-weight: bold; color: #6b46c1;">
+                ES-A (Exclusiva/Total)
+            </div>
+            
+            <!-- Relación SE_ALIMENTA_DE -->
+            <div class="relationship" style="top: 420px; left: 280px;">SE_ALIMENTA_DE</div>
+            <div class="cardinality" style="top: 450px; left: 220px;">(0,n)</div>
+            <div class="cardinality" style="top: 450px; left: 460px;">(0,n)</div>
+            
+            <!-- PERSONAL -->
+            <div class="entity" style="top: 800px; left: 50px;">
+                <div class="entity-title">PERSONAL</div>
+                <div class="entity-attributes">
+                    <span class="pk">DNI</span><br>
+                    NSS<br>
+                    nombre<br>
+                    dirección<br>
+                    teléfono_fijo<br>
+                    teléfono_móvil
+                </div>
+            </div>
+            
+            <!-- Relación TRABAJA_EN -->
+            <div class="relationship" style="top: 850px; left: 280px;">TRABAJA_EN</div>
+            <div class="cardinality" style="top: 840px; left: 220px;">(1,n)</div>
+            <div class="cardinality" style="top: 840px; left: 460px;">(1,n)</div>
+            
+            <!-- PARQUE NATURAL (referencia) -->
+            <div class="entity" style="top: 800px; left: 520px;">
+                <div class="entity-title">PARQUE NATURAL</div>
+                <div class="entity-attributes">
+                    <span class="pk">código</span>
+                </div>
+            </div>
+            
+            <!-- Especializaciones de PERSONAL -->
+            <div class="specialization" style="top: 1000px; left: 20px;">
+                <div class="specialization-title">GESTIÓN</div>
+                <div class="specialization-attributes">
+                    (sin atributos adicionales)
+                </div>
+            </div>
+            
+            <div class="specialization" style="top: 1000px; left: 200px;">
+                <div class="specialization-title">VIGILANCIA</div>
+                <div class="specialization-attributes">
+                    tipo_vehículo<br>
+                    matrícula
+                </div>
+            </div>
+            
+            <div class="specialization" style="top: 1000px; left: 400px;">
+                <div class="specialization-title">CONSERVACIÓN</div>
+                <div class="specialization-attributes">
+                    especialidad
+                </div>
+            </div>
+            
+            <div class="specialization" style="top: 1000px; left: 620px;">
+                <div class="specialization-title">INVESTIGACIÓN</div>
+                <div class="specialization-attributes">
+                    titulación
+                </div>
+            </div>
+            
+            <!-- Indicador especialización PERSONAL -->
+            <div style="position: absolute; top: 970px; left: 100px; font-weight: bold; color: #6b46c1;">
+                ES-A (Exclusiva/Total)
+            </div>
+            
+            <!-- Relación VIGILA (Vigilancia - Área) -->
+            <div class="relationship" style="top: 1050px; left: 380px;">VIGILA</div>
+            <div class="cardinality" style="top: 1040px; left: 330px;">(1,1)</div>
+            <div class="cardinality" style="top: 1040px; left: 480px;">(0,n)</div>
+            
+            <!-- ÁREA (referencia para vigilancia) -->
+            <div class="entity weak-entity" style="top: 1000px; left: 520px;">
+                <div class="entity-title">ÁREA</div>
+                <div class="entity-attributes">
+                    <span class="pk">código</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <div class="legend-title">Leyenda y Convenciones:</div>
+            <div class="legend-item">• <strong>Rectángulo simple:</strong> Entidad fuerte</div>
+            <div class="legend-item">• <strong>Rectángulo doble:</strong> Entidad débil (ÁREA depende de PARQUE NATURAL)</div>
+            <div class="legend-item">• <strong>Elipse amarilla:</strong> Relación</div>
+            <div class="legend-item">• <strong>Rectángulo morado:</strong> Especialización/Herencia</div>
+            <div class="legend-item">• <strong>Atributo subrayado:</strong> Clave primaria</div>
+            <div class="legend-item">• <strong>(m,n):</strong> Cardinalidades (mínima, máxima)</div>
+            <div class="legend-item">• <strong>ES-A (Exclusiva/Total):</strong> Especialización donde cada entidad pertenece a exactamente una subclase</div>
+        </div>
+        
+        <div class="notes">
+            <div class="notes-title">📋 Supuestos Semánticos Aplicados:</div>
+            <div class="notes-content">
+                <strong>1. Gestión CCAA-Parque:</strong> Cardinalidad (1,n)-(1,n) ya que un parque puede estar compartido por varias CCAA y una CCAA gestiona varios parques.<br><br>
+                
+                <strong>2. ÁREA como entidad débil:</strong> Depende existencialmente de PARQUE NATURAL. Su código solo es único dentro de cada parque.<br><br>
+                
+                <strong>3. Relación RESIDE:</strong> Incluye atributo "nº_individuos" ya que depende tanto del área como de la especie (no es atributo de ninguna entidad sola).<br><br>
+                
+                <strong>4. SE_ALIMENTA_DE:</strong> Relación reflexiva sobre ESPECIE con restricción: las especies minerales NO participan como presa ni como depredador. Las animales pueden alimentarse de vegetales y otras animales.<br><br>
+                
+                <strong>5. Especialización de ESPECIE:</strong> Exclusiva y Total (cada especie es exactamente de un tipo: vegetal, animal o mineral).<br><br>
+                
+                <strong>6. PERSONAL trabaja en PARQUE:</strong> Un empleado puede trabajar en varios parques y un parque tiene varios empleados.<br><br>
+                
+                <strong>7. Especialización de PERSONAL:</strong> Exclusiva y Total (cada personal es de exactamente un tipo).<br><br>
+                
+                <strong>8. VIGILA:</strong> Un vigilante vigila un solo área (1,1) pero un área puede tener varios vigilantes (0,n).<br><br>
+                
+                <strong>9. Atributo derivado:</strong> "tiempo_declarado" se calcula a partir de la fecha actual y fecha_declaración.<br><br>
+                
+                <strong>10. Redundancia potencial:</strong> No se detectan ciclos que generen redundancia en este modelo.
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Dibujar algunas líneas de conexión principales
+        const svg = document.getElementById('connections');
+        
+        // Función para crear líneas
+        function drawLine(x1, y1, x2, y2) {
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', x1);
+            line.setAttribute('y1', y1);
+            line.setAttribute('x2', x2);
+            line.setAttribute('y2', y2);
+            svg.appendChild(line);
+        }
+        
+        // CCAA - GESTIONA - PARQUE
+        drawLine(210, 60, 280, 60);
+        drawLine(380, 60, 520, 60);
+        
+        // PARQUE - COMPONE - ÁREA
+        drawLine(620, 120, 620, 160);
+        drawLine(620, 200, 620, 210);
+        
+        // ÁREA - RESIDE - ESPECIE
+        drawLine(620, 300, 620, 330);
+        drawLine(620, 370, 620, 410);
+        
+        // ESPECIE - Especializaciones
+        drawLine(590, 510, 370, 560);
+        drawLine(600, 510, 600, 560);
+        drawLine(610, 510, 820, 560);
+        
+        // ESPECIE reflexiva SE_ALIMENTA_DE
+        drawLine(520, 450, 280, 450);
+        drawLine(380, 450, 520, 450);
+        
+        // PERSONAL - TRABAJA_EN - PARQUE
+        drawLine(210, 850, 280, 850);
+        drawLine(380, 850, 520, 850);
+        
+        // PERSONAL - Especializaciones
+        drawLine(110, 920, 90, 1000);
+        drawLine(120, 920, 270, 1000);
+        drawLine(130, 920, 470, 1000);
+        drawLine(140, 920, 690, 1000);
+        
+        // VIGILANCIA - VIGILA - ÁREA
+        drawLine(330, 1070, 380, 1070);
+        drawLine(480, 1070, 520, 1070);
+    </script>
+</body>
+</html>
