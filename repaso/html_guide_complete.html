@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de HTML y CSS</title>
+    <!-- Link para vincular el archivo CSS externo -->
+    <link rel="stylesheet" href="css_guide_complete.css">
+</head>
+<body>
+    <!-- COMENTARIO: Este es un comentario HTML, no se muestra en la página -->
+    
+    <!-- HEADER: Etiqueta semántica para el encabezado principal -->
+    <header>
+        <h1>&lt;h1&gt; - Encabezado de nivel 1: Guía Completa de HTML y CSS</h1>
+        
+        <!-- NAV: Etiqueta semántica para la navegación -->
+        <nav>
+            <p><strong>&lt;nav&gt;</strong> - Contenedor de navegación con enlaces:</p>
+            <ul>
+                <li><a href="#textos">Ir a Textos</a></li>
+                <li><a href="#tablas">Ir a Tablas</a></li>
+                <li><a href="#listas">Ir a Listas</a></li>
+                <li><a href="#formularios">Ir a Formularios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION: Etiqueta semántica para agrupar contenido temático -->
+    <section id="textos">
+        <h2>&lt;h2&gt; - Encabezado de nivel 2: Elementos de Texto y Formato</h2>
+        
+        <!-- ARTICLE: Contenido independiente y autocontenido -->
+        <article class="destacado especial">
+            <h3>&lt;h3&gt; - Encabezado de nivel 3: Párrafos y Saltos de Línea</h3>
+            
+            <!-- P: Etiqueta de párrafo -->
+            <p><strong>&lt;p&gt;</strong> - Este es un párrafo normal.</p>
+            
+            <!-- B y STRONG: Negrita (visual vs semántica) -->
+            <p><b>&lt;b&gt;</b> - Texto en <b>negrita visual</b> vs <strong>&lt;strong&gt;</strong> - Texto <strong>importante semántico</strong></p>
+            
+            <!-- I y EM: Cursiva (visual vs semántica) -->
+            <p><i>&lt;i&gt;</i> - Texto en <i>cursiva visual</i> vs <em>&lt;em&gt;</em> - Texto con <em>énfasis semántico</em></p>
+            
+            <!-- BR: Salto de línea -->
+            <p>Primera línea de texto<br>
+            <strong>&lt;br&gt;</strong> - Salto de línea aplicado<br>
+            Tercera línea después del salto</p>
+            
+            <!-- PRE: Texto preformateado que respeta espacios y saltos -->
+            <pre>&lt;pre&gt; - Texto preformateado
+    que respeta los
+        espacios y
+            saltos de línea</pre>
+            
+            <!-- MARK: Texto resaltado -->
+            <p><strong>&lt;mark&gt;</strong> - Texto con <mark>marca amarilla destacada</mark></p>
+            
+            <!-- SMALL: Texto más pequeño -->
+            <p><strong>&lt;small&gt;</strong> - Texto normal y <small>texto más pequeño</small></p>
+            
+            <!-- DEL y S: Texto eliminado vs texto no relevante -->
+            <p><strong>&lt;del&gt;</strong> - <del>Texto eliminado</del> | <strong>&lt;s&gt;</strong> - <s>Texto ya no relevante</s></p>
+            
+            <!-- INS y U: Texto insertado y subrayado -->
+            <p><strong>&lt;ins&gt;</strong> - <ins>Texto insertado</ins> | <strong>&lt;u&gt;</strong> - <u>Texto subrayado</u></p>
+            
+            <!-- SUB y SUP: Subíndice y superíndice -->
+            <p><strong>&lt;sub&gt; y &lt;sup&gt;</strong> - Fórmulas: H<sub>2</sub>O (agua) y E=mc<sup>2</sup> (Einstein)</p>
+            
+            <!-- HR: Línea horizontal separadora -->
+            <hr>
+            <p><strong>&lt;hr&gt;</strong> - Línea horizontal de separación (arriba)</p>
+            
+            <h4>&lt;h4&gt; - Encabezado de nivel 4: Citas y Referencias</h4>
+            
+            <!-- BLOCKQUOTE: Cita en bloque con atributo cite -->
+            <blockquote cite="https://ejemplo.com">
+                <strong>&lt;blockquote cite="url"&gt;</strong> - Esta es una cita larga de otra fuente que ocupa un bloque completo y puede incluir la URL de referencia.
+            </blockquote>
+            
+            <!-- Q: Cita corta en línea -->
+            <p><q>&lt;q&gt; - Esta es una cita corta en línea con comillas automáticas</q>, dijo el autor.</p>
+            
+            <!-- CITE: Título de una obra -->
+            <p><strong>&lt;cite&gt;</strong> - <cite>El Quijote</cite> es una obra maestra de Cervantes.</p>
+            
+            <!-- ABBR: Abreviatura con atributo title -->
+            <p><strong>&lt;abbr title="..."&gt;</strong> - <abbr title="HyperText Markup Language">HTML</abbr> es el lenguaje de marcado web (pasa el mouse sobre HTML).</p>
+            
+            <!-- ADDRESS: Información de contacto -->
+            <address>
+                <strong>&lt;address&gt;</strong> - Información de contacto:<br>
+                Email: <a href="mailto:ejemplo@correo.com">ejemplo@correo.com</a><br>
+                Dirección: Calle Ejemplo, 123
+            </address>
+            
+            <!-- BDO: Cambio de dirección del texto -->
+            <p><strong>&lt;bdo dir="rtl"&gt;</strong> - <bdo dir="rtl">Este texto se muestra de derecha a izquierda</bdo></p>
+        </article>
+
+        <article>
+            <h3>Enlaces e Imágenes</h3>
+            
+            <!-- A: Enlaces con diferentes atributos target -->
+            <p><strong>&lt;a href="url"&gt;</strong> - Enlaces:</p>
+            <p>
+                <a href="https://ejemplo.com" target="_blank">target="_blank" - Abre en nueva pestaña</a> |
+                <a href="https://ejemplo.com" target="_self">target="_self" - Abre en misma pestaña</a>
+            </p>
+            
+            <p><strong>href="mailto:email"</strong> - <a href="mailto:ejemplo@correo.com">Enviar correo electrónico</a></p>
+            
+            <!-- IMG: Imagen con atributos src, alt, width, height -->
+            <p><strong>&lt;img src="..." alt="..." width="..." height="..."&gt;</strong> - Imagen con dimensiones:</p>
+            <img src="https://via.placeholder.com/300x200/4CAF50/FFFFFF?text=Imagen+de+Ejemplo" alt="Imagen de ejemplo con fondo verde" width="300" height="200">
+            
+            <!-- A con IMG: Imagen como enlace -->
+            <p><strong>&lt;a&gt; + &lt;img&gt;</strong> - Imagen clicable que funciona como enlace:</p>
+            <a href="https://ejemplo.com" target="_blank">
+                <img src="https://via.placeholder.com/200x100/2196F3/FFFFFF?text=Click+aqui" alt="Imagen enlace" width="200" height="100">
+            </a>
+        </article>
+    </section>
+
+    <!-- SECTION con ID para tablas -->
+    <section id="tablas">
+        <h2>Tablas: Estructura y Combinación de Celdas</h2>
+        
+        <!-- TABLE: Estructura completa de tabla -->
+        <p><strong>&lt;table&gt;</strong> - Contenedor principal de la tabla</p>
+        <table>
+            <!-- CAPTION: Título de la tabla -->
+            <caption>&lt;caption&gt; - Título descriptivo de la tabla</caption>
+            
+            <!-- TR: Fila de tabla -->
+            <!-- TH: Celda de encabezado -->
+            <tr>
+                <th>&lt;th&gt; - Encabezado</th>
+                <th>Edad</th>
+                <!-- COLSPAN: Combina columnas -->
+                <th colspan="2">colspan="2" - Combina 2 columnas</th>
+            </tr>
+            
+            <!-- TD: Celda de datos -->
+            <tr>
+                <td>&lt;td&gt; - Dato</td>
+                <td>25</td>
+                <td>Email</td>
+                <td>Teléfono</td>
+            </tr>
+            <tr>
+                <td>María</td>
+                <td>30</td>
+                <td>maria@email.com</td>
+                <td>123-456-789</td>
+            </tr>
+            <tr>
+                <!-- ROWSPAN: Combina filas -->
+                <td rowspan="2">rowspan="2" - Combina 2 filas</td>
+                <td>28</td>
+                <td>pedro@email.com</td>
+                <td>987-654-321</td>
+            </tr>
+            <tr>
+                <td colspan="3">Información adicional (colspan + rowspan combinados)</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="listas">
+        <h2>Listas: Ordenadas, No Ordenadas y Descriptivas</h2>
+        
+        <h3>&lt;ul&gt; - Lista No Ordenada (Unordered List)</h3>
+        <p><strong>Atributo style="list-style-type: square"</strong> - Cambia el marcador a cuadrado</p>
+        <!-- UL: Lista no ordenada -->
+        <ul style="list-style-type: square;">
+            <!-- LI: Elemento de lista -->
+            <li>&lt;li&gt; - Elemento 1</li>
+            <li>Elemento 2 (con sublista)
+                <ul style="list-style-type: circle;">
+                    <li>list-style-type: circle - Subelemento 2.1</li>
+                    <li>Subelemento 2.2</li>
+                </ul>
+            </li>
+            <li>Elemento 3</li>
+        </ul>
+
+        <h3>&lt;ol&gt; - Lista Ordenada (Ordered List)</h3>
+        
+        <!-- OL con type y start -->
+        <p><strong>type="A" start="3"</strong> - Lista con letras mayúsculas comenzando en C</p>
+        <ol type="A" start="3">
+            <li>Primer ítem (C)</li>
+            <li>Segundo ítem (D)</li>
+            <li>Tercer ítem (E)</li>
+        </ol>
+
+        <p><strong>type="i"</strong> - Números romanos en minúsculas</p>
+        <ol type="i">
+            <li>Primer ítem (i)</li>
+            <li>Segundo ítem (ii)</li>
+            <li>Tercer ítem (iii)</li>
+        </ol>
+        
+        <p><strong>type="I"</strong> - Números romanos en mayúsculas</p>
+        <ol type="I">
+            <li>Primer ítem (I)</li>
+            <li>Segundo ítem (II)</li>
+        </ol>
+
+        <h3>&lt;dl&gt; - Lista Descriptiva (Description List)</h3>
+        <!-- DL: Lista descriptiva -->
+        <dl>
+            <!-- DT: Término a describir -->
+            <dt><strong>&lt;dt&gt;</strong> - HTML</dt>
+            <!-- DD: Descripción del término -->
+            <dd><strong>&lt;dd&gt;</strong> - Lenguaje de marcado para crear páginas web</dd>
+            
+            <dt>CSS</dt>
+            <dd>Lenguaje de estilos para diseñar páginas web</dd>
+            
+            <dt>JavaScript</dt>
+            <dd>Lenguaje de programación para interactividad web</dd>
+        </dl>
+    </section>
+
+    <section id="formularios">
+        <h2>Formularios: Todos los Tipos de Input y Atributos</h2>
+        
+        <!-- FORM: Contenedor del formulario con atributos principales -->
+        <form action="https://ejemplo.com/procesar" method="post" autocomplete="on">
+            <p><strong>&lt;form&gt;</strong> con atributos:</p>
+            <ul>
+                <li><strong>action="url"</strong> - Destino donde se envían los datos</li>
+                <li><strong>method="post"</strong> - Método de envío (post: seguro, get: visible en URL)</li>
+                <li><strong>autocomplete="on"</strong> - Activa el autocompletado del navegador</li>
+            </ul>
+            
+            <!-- FIELDSET: Agrupa elementos relacionados -->
+            <fieldset>
+                <!-- LEGEND: Título del fieldset -->
+                <legend>&lt;legend&gt; - Información Personal</legend>
+                
+                <h4>Campos de Texto</h4>
+                
+                <!-- LABEL con atributo for vinculado al ID del input -->
+                <label for="nombre"><strong>&lt;label for="id"&gt;</strong> - Nombre completo:</label>
+                <!-- INPUT type="text" con múltiples atributos -->
+                <input type="text" id="nombre" name="nombre" placeholder="placeholder - texto de ayuda" required autofocus>
+                <p><strong>Atributos:</strong> type="text", id="nombre", name="nombre", placeholder, required, autofocus</p>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                <p><strong>type="email"</strong> - Valida formato de correo electrónico</p>
+                
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" minlength="8" required>
+                <p><strong>type="password"</strong> - Oculta el texto | <strong>minlength="8"</strong> - Mínimo 8 caracteres</p>
+                
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
+                <p><strong>type="tel"</strong> - Campo de teléfono | <strong>pattern</strong> - Expresión regular de validación</p>
+                
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" min="18" max="100" step="1">
+                <p><strong>type="number"</strong> | <strong>min="18" max="100" step="1"</strong> - Rango y saltos numéricos</p>
+                
+                <label for="rango">Nivel de experiencia:</label>
+                <input type="range" id="rango" name="rango" min="0" max="10" step="1" value="5">
+                <p><strong>type="range"</strong> - Control deslizante (slider) | <strong>value="5"</strong> - Valor inicial</p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Fechas y Tiempos</legend>
+                
+                <label for="fecha">Fecha de nacimiento:</label>
+                <input type="date" id="fecha" name="fecha" min="1900-01-01" max="2025-12-31">
+                <p><strong>type="date"</strong> - Selector de fecha | <strong>min/max</strong> - Rango de fechas válidas</p>
+                
+                <label for="hora">Hora preferida:</label>
+                <input type="time" id="hora" name="hora">
+                <p><strong>type="time"</strong> - Selector de hora (sin zona horaria)</p>
+                
+                <label for="fecha-hora">Fecha y hora:</label>
+                <input type="datetime-local" id="fecha-hora" name="fecha-hora">
+                <p><strong>type="datetime-local"</strong> - Selector de fecha y hora combinados</p>
+                
+                <label for="mes">Mes y año:</label>
+                <input type="month" id="mes" name="mes">
+                <p><strong>type="month"</strong> - Selector de mes y año</p>
+                
+                <label for="semana">Semana del año:</label>
+                <input type="week" id="semana" name="semana">
+                <p><strong>type="week"</strong> - Selector de semana y año</p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Selecciones y Opciones</legend>
+                
+                <label for="color">Color favorito:</label>
+                <input type="color" id="color" name="color" value="#ff6347">
+                <p><strong>type="color"</strong> - Selector de color | <strong>value="#ff6347"</strong> - Color inicial</p>
+                
+                <h4>Radio Buttons (una opción)</h4>
+                <p><strong>type="radio"</strong> - Botones de opción única (mismo name)</p>
+                <input type="radio" id="masculino" name="genero" value="masculino">
+                <label for="masculino">Masculino</label><br>
+                
+                <input type="radio" id="femenino" name="genero" value="femenino">
+                <label for="femenino">Femenino</label><br>
+                
+                <input type="radio" id="otro" name="genero" value="otro" checked>
+                <label for="otro">Otro (checked - preseleccionado)</label>
+                
+                <h4>Checkboxes (múltiples opciones)</h4>
+                <p><strong>type="checkbox"</strong> - Casillas de verificación múltiple</p>
+                <input type="checkbox" id="deportes" name="intereses" value="deportes">
+                <label for="deportes">Deportes</label><br>
+                
+                <input type="checkbox" id="musica" name="intereses" value="musica" checked>
+                <label for="musica">Música (checked)</label><br>
+                
+                <input type="checkbox" id="lectura" name="intereses" value="lectura">
+                <label for="lectura">Lectura</label>
+                
+                <h4>&lt;select&gt; - Lista Desplegable</h4>
+                <label for="pais">País:</label>
+                <select id="pais" name="pais" size="1">
+                    <option value="" selected>-- Selecciona un país --</option>
+                    <option value="es">España</option>
+                    <option value="mx">México</option>
+                    <option value="ar">Argentina</option>
+                    <option value="co">Colombia</option>
+                </select>
+                <p><strong>size="1"</strong> - Muestra 1 opción | <strong>&lt;option value selected&gt;</strong> - Opción preseleccionada</p>
+                
+                <label for="ciudades">Ciudades visitadas (múltiple):</label>
+                <select id="ciudades" name="ciudades" size="4" multiple>
+                    <option value="mad">Madrid</option>
+                    <option value="bar">Barcelona</option>
+                    <option value="val">Valencia</option>
+                    <option value="sev">Sevilla</option>
+                    <option value="bil">Bilbao</option>
+                </select>
+                <p><strong>size="4"</strong> - Muestra 4 opciones | <strong>multiple</strong> - Permite selección múltiple (Ctrl+Click)</p>
+                
+                <h4>&lt;datalist&gt; - Autocompletado</h4>
+                <label for="navegador">Navegador preferido:</label>
+                <input list="navegadores" id="navegador" name="navegador" placeholder="Escribe o selecciona">
+                <!-- DATALIST: Lista de opciones predefinidas -->
+                <datalist id="navegadores">
+                    <option value="Chrome">
+                    <option value="Firefox">
+                    <option value="Safari">
+                    <option value="Edge">
+                    <option value="Opera">
+                </datalist>
+                <p><strong>list="id"</strong> vincula input con datalist | Permite escribir o seleccionar</p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Archivos, URLs y Búsquedas</legend>
+                
+                <label for="archivo">Subir archivo:</label>
+                <input type="file" id="archivo" name="archivo" multiple>
+                <p><strong>type="file"</strong> - Selector de archivos | <strong>multiple</strong> - Permite múltiples archivos</p>
+                
+                <label for="sitio-web">Sitio web:</label>
+                <input type="url" id="sitio-web" name="sitio-web" placeholder="https://ejemplo.com">
+                <p><strong>type="url"</strong> - Valida formato de URL</p>
+                
+                <label for="buscar">Búsqueda:</label>
+                <input type="search" id="buscar" name="buscar" placeholder="Buscar...">
+                <p><strong>type="search"</strong> - Campo optimizado para búsquedas</p>
+            </fieldset>
+
+            <fieldset>
+                <legend>&lt;textarea&gt; y Campos Especiales</legend>
+                
+                <label for="comentarios">Comentarios:</label>
+                <!-- TEXTAREA: Campo de texto multilínea -->
+                <textarea id="comentarios" name="comentarios" rows="5" cols="50" placeholder="Escribe aquí..."></textarea>
+                <p><strong>rows="5" cols="50"</strong> - Define tamaño visible (5 filas x 50 columnas)</p>
+                
+                <label for="readonly">Campo de solo lectura:</label>
+                <input type="text" id="readonly" name="readonly" value="No puedes editar esto" readonly>
+                <p><strong>readonly</strong> - Campo visible pero no editable</p>
+                
+                <label for="disabled">Campo deshabilitado:</label>
+                <input type="text" id="disabled" name="disabled" value="Campo deshabilitado" disabled>
+                <p><strong>disabled</strong> - Campo deshabilitado (no se envía en el formulario)</p>
+            </fieldset>
+
+            <!-- INPUT HIDDEN: Campo oculto -->
+            <input type="hidden" name="usuario-id" value="12345">
+            <p><strong>type="hidden"</strong> - Campo oculto (envía datos sin mostrarlos): usuario-id="12345"</p>
+
+            <h4>Botones de Acción</h4>
+            <input type="submit" value="Enviar Formulario">
+            <p><strong>type="submit"</strong> - Envía el formulario al servidor</p>
+            
+            <input type="reset" value="Limpiar Formulario">
+            <p><strong>type="reset"</strong> - Restablece todos los campos a sus valores predeterminados</p>
+            
+            <button type="button" onclick="alert('¡Botón clickeado!')">Botón Normal</button>
+            <p><strong>&lt;button type="button"&gt;</strong> - Botón personalizable con JavaScript</p>
+            
+            <input type="image" src="https://via.placeholder.com/100x40/4CAF50/FFFFFF?text=Enviar" alt="Enviar" width="100" height="40">
+            <p><strong>type="image"</strong> - Botón de envío con imagen personalizada</p>
+        </form>
+    </section>
+
+    <!-- ASIDE: Contenido complementario -->
+    <aside>
+        <h3>&lt;aside&gt; - Barra Lateral de Información Adicional</h3>
+        <p>Este es contenido complementario que está relacionado indirectamente con el contenido principal.</p>
+        <p>Se usa típicamente para barras laterales, notas al margen o información contextual.</p>
+    </aside>
+
+    <!-- FOOTER: Pie de página -->
+    <footer>
+        <h3>&lt;footer&gt; - Pie de Página</h3>
+        <p>&copy; 2025 - Guía Completa de HTML y CSS</p>
+        <p>Contacto: <a href="mailto:info@ejemplo.com">info@ejemplo.com</a></p>
+        <p><a href="#textos">↑ Volver arriba</a></p>
+    </footer>
+</body>
+</html>
